@@ -34,6 +34,7 @@ if [ -z "${TARGET_DATABASE}" ]; then
 fi
 
 exec liquibase --driver=com.mysql.jdbc.Driver \
+     --classpath=${CLASSPATH} \
      --changeLogFile=${WORKING_DIR}/migrations.xml \
      --url="jdbc:mysql://$CLIENT_HOST:$CLIENT_PORT/$TARGET_DATABASE?createDatabaseIfNotExist=true" \
      --username="${CLIENT_USER}" \
