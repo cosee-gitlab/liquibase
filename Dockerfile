@@ -19,7 +19,6 @@ RUN \
   mkdir /opt/jdbc_drivers/ && \
   unzip mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.zip -d /opt/jdbc_drivers/ && \
   chmod +x /opt/jdbc_drivers/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}-bin.jar && \
-  #mkdir /opt/liquibase/lib/ && \
   ln -s /opt/jdbc_drivers/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}-bin.jar /opt/liquibase/lib/
 
 VOLUME ["/changelogs"]

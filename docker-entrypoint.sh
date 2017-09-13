@@ -1,10 +1,10 @@
 #!/bin/ash -xe
 
-if [ ! -z "$WORKING_DIR" ]; then
-    cd $WORKING_DIR
-else
-    WORKING_DIR="/changelogs"
-fi
+# if [ ! -z "$WORKING_DIR" ]; then
+#     cd $WORKING_DIR
+# else
+#     WORKING_DIR="/changelogs"
+# fi
 
 if [ "$1" = 'prompt' ]; then
   exec /bin/ash
