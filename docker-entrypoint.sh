@@ -1,13 +1,13 @@
-#!/bin/ash -xe
+#!/bin/bash -xe
 
-# if [ ! -z "$WORKING_DIR" ]; then
-#     cd $WORKING_DIR
-# else
-#     WORKING_DIR="/changelogs"
-# fi
+if [ ! -z "$WORKING_DIR" ]; then
+    cd $WORKING_DIR
+else
+    WORKING_DIR="/changelogs"
+fi
 
 if [ "$1" = 'prompt' ]; then
-  exec /bin/ash
+  exec /bin/bash
 fi
 
 # if it looks like the user is passing options, treat it like so
@@ -38,5 +38,4 @@ exec liquibase --driver=com.mysql.jdbc.Driver \
      --url="jdbc:mysql://$CLIENT_HOST:$CLIENT_PORT/$TARGET_DATABASE?createDatabaseIfNotExist=true" \
      --username="${CLIENT_USER}" \
      "$CLIENT_PASS" \
-     "$@" \
      update

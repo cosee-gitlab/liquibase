@@ -1,10 +1,12 @@
-FROM java:8-jre-alpine
+FROM java:8-jre
 
 ENV LIQUIBASE_VERSION 3.5.3
 ENV MYSQL_CONNECTOR_VERSION 5.1.44
 
-RUN apk -Uuv add unzip curl && \
-    rm /var/cache/apk/*
+RUN apt-get update && apt-get install -y \
+    unzip \
+    curl  \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN \
   curl -sf -o liquibase-bin.zip -L https://github.com/liquibase/liquibase/releases/download/liquibase-parent-${LIQUIBASE_VERSION}/liquibase-${LIQUIBASE_VERSION}-bin.zip && \
